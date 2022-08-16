@@ -66,7 +66,7 @@ function useDraggableBlockMenu(
     useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    function onMousemove(event: MouseEvent) {
+    function onMouseMove(event: MouseEvent) {
       const target = event.target;
       if (!isHTMLElement(target)) {
         setDraggableBlockElem(null);
@@ -81,10 +81,10 @@ function useDraggableBlockMenu(
       setDraggableBlockElem(_draggableBlockElem);
     }
 
-    window.addEventListener('mousemove', onMousemove);
+    window.addEventListener('mousemove', onMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', onMousemove);
+      window.removeEventListener('mousemove', onMouseMove);
     };
   }, []);
 
